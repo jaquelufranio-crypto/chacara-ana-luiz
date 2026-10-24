@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#12140E">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312140E'/%3E%3Cg fill='none' stroke='%23CDA96D' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M4 23c5-.4 8-5 12-5s7 4.4 12 5'/%3E%3Cpath d='M9 18.5a7 7 0 0 1 14 0'/%3E%3Cpath d='M16 8v2.4'/%3E%3C/g%3E%3C/svg%3E">
-<title>Chácara Ana Luiz</title>
+<title>Chácara Ana Luiz Agapito</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Manrope:wght@400;500;600&display=swap">
@@ -57,7 +57,8 @@ em.g{font-style:italic;font-weight:500;background:var(--gold-grad);-webkit-backg
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand svg{width:40px;height:24px;color:var(--gold)}
 .brand div{display:grid;line-height:1}
-.brand b{font-family:var(--serif);font-weight:400;font-size:1.15rem;letter-spacing:.06em}
+.brand b{font-family:var(--serif);font-weight:400;font-size:1rem;letter-spacing:.08em;white-space:nowrap}
+@media (max-width:420px){.brand b{font-size:.8rem;letter-spacing:.04em}.brand svg{width:30px}}
 .brand small{font-size:.56rem;letter-spacing:.42em;color:var(--gold);margin-top:4px}
 .nav ul{display:flex;gap:28px;white-space:nowrap;list-style:none;margin:0;padding:0;font-size:.82rem}
 .nav ul a{text-decoration:none;color:var(--text-soft);transition:color .2s}
@@ -252,6 +253,13 @@ a.day.free:hover{background:rgba(201,165,108,.18);border-color:#C49A5C}
 .lform .btn-s{width:100%;padding:15px 20px}
 .cal-note{margin:14px 0 0;font-size:.9rem;color:#8B6A3A}
 
+.inc-list{border-radius:10px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(58,74,34,.35),rgba(25,28,19,.6));padding:clamp(26px,3.6vw,42px)}
+.inc-list h3{margin:0 0 18px;font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4vw,2.8rem);letter-spacing:.12em;line-height:1.1;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.inc-list ul{list-style:none;margin:0;padding:0;display:grid}
+.inc-list li{display:flex;align-items:center;gap:16px;padding:14px 0;border-top:1px solid var(--hair);font-size:clamp(1.15rem,2vw,1.35rem);color:var(--text);line-height:1.35}
+.ck{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold-grad);color:#2B2416;display:grid;place-items:center}
+.ck svg{width:16px;height:16px}
+
 /* ---------- SOBRE ---------- */
 .about{position:relative;overflow-x:clip;padding-block:70px 130px;background:radial-gradient(60% 50% at 100% 0%,rgba(58,74,34,.55),transparent 70%),radial-gradient(50% 40% at 0% 100%,rgba(58,74,34,.45),transparent 70%)}
 .center{text-align:center}
@@ -264,7 +272,7 @@ a.day.free:hover{background:rgba(201,165,108,.18);border-color:#C49A5C}
 .cream p{margin:0;color:var(--cream-soft);font-size:.98rem}
 .ph{border-radius:8px;overflow:hidden;min-height:240px;position:relative;border:1px solid rgba(239,235,225,.12)}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.a1{grid-column:span 7}.a2{grid-column:span 5}.a3{grid-column:span 5}.a4{grid-column:span 7}.a5{grid-column:span 7}.a6{grid-column:span 5}
+.a1{grid-column:span 7}.a2{grid-column:span 5}.a3{grid-column:span 6}.a4{grid-column:span 6}.a5{grid-column:span 7}.a6{grid-column:span 5}
 @media (max-width:820px){.grid-about{grid-template-columns:1fr}.a1,.a2,.a3,.a4,.a5,.a6{grid-column:span 1}.a3{order:4}.a4{order:3}}
 
 /* ---------- SELO / NOTCH ---------- */
@@ -334,6 +342,21 @@ a.day.free:hover{background:rgba(201,165,108,.18);border-color:#C49A5C}
 .map:hover .open span:last-child{text-decoration:underline}
 @media (max-width:820px){.loc-grid{grid-template-columns:1fr}}
 
+/* ---------- AVISO ---------- */
+.aviso-sec{padding-block:110px 70px}
+.aviso{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(205,169,109,.45);padding:clamp(48px,7vw,80px) clamp(16px,5vw,60px);text-align:center;isolation:isolate}
+.aviso > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(6px) brightness(.4) saturate(1.1);transform:scale(1.08);z-index:-2}
+.aviso::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 50% 50%,rgba(18,20,14,.4),rgba(18,20,14,.85));z-index:-1}
+.aviso .h2{max-width:18ch;margin:18px auto 0;font-size:clamp(2.1rem,4.6vw,3.3rem)}
+.info3{list-style:none;margin:40px auto;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:920px}
+.info3 li{background:var(--cream);color:var(--cream-ink);border-radius:10px;padding:26px 18px 24px;display:grid;justify-items:center;gap:6px;min-width:0}
+.info3 .ic{width:56px;height:56px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;color:#2B2416;margin-bottom:8px}
+.info3 .ic svg{width:28px;height:28px}
+.info3 b{font-family:var(--sans);font-weight:600;font-size:clamp(1.25rem,2.2vw,1.5rem);line-height:1.2}
+.info3 small{color:var(--cream-soft);font-size:.95rem}
+.aviso .tel{display:block;margin-top:22px;font-size:1rem;color:var(--text-soft);user-select:all}
+@media (max-width:760px){.info3{grid-template-columns:1fr}}
+
 /* ---------- CTA FINAL ---------- */
 .final{padding-block:40px 110px}
 .box{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(239,235,225,.22);padding:clamp(56px,8vw,90px) 24px;text-align:center;isolation:isolate}
@@ -377,9 +400,9 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="brand" href="#topo" aria-label="Chácara Ana Luiz, início">
+    <a class="brand" href="#topo" aria-label="Chácara Ana Luiz Agapito, início">
       <svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M1 21c7-.6 10-7 15-7s8 6 23 7"/><path d="M11 15a7 7 0 0 1 14 0"/><path d="M31 21V7M31 7c-2-1.8-4.6-1.8-6-.8M31 7c2-1.8 4.6-1.8 6-.8M31 7c-.3-2.4-1.8-4-3.4-4.6M31 7c.3-2.4 1.8-4 3.4-4.6"/></svg>
-      <div><b>ANA LUIZ</b><small>CHÁCARA</small></div>
+      <div><b>CHÁCARA ANA LUIZ AGAPITO</b></div>
     </a>
     <nav aria-label="Seções">
       <ul>
@@ -387,11 +410,11 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
         <li><a href="#incluso">O que inclui</a></li>
         <li><a href="#sobre">A chácara</a></li>
         <li><a href="#agenda">Agenda</a></li>
-        <li><a href="#reservar">Como reservar</a></li>
+        <li><a href="#reservar">Reservar</a></li>
         <li><a href="#local">Localização</a></li>
       </ul>
     </nav>
-    <a class="ghost js-wa" href="#contato" target="_blank" rel="noopener"><span>Consultar datas</span><svg class="ico"><use href="#wa"/></svg></a>
+    <a class="ghost js-wa" href="#reservar" target="_blank" rel="noopener"><span>Consultar datas</span><svg class="ico"><use href="#wa"/></svg></a>
   </div>
 </header>
 
@@ -423,7 +446,7 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
       <div>
         <span class="tag"><svg class="ico"><use href="#orn"/></svg>Conheça em vídeo</span>
         <h2 class="h2">Veja a chácara <em class="g">pronta para o seu evento</em></h2>
-        <p>Do gramado montado para a cerimônia ao salão com as mesas postas. Assim a Ana Luiz recebe quem você ama.</p>
+        <p>Do gramado montado para a cerimônia ao salão com as mesas postas. Assim a Chácara Ana Luiz Agapito recebe quem você ama.</p>
         <ul>
           <li><svg><use href="#orn"/></svg>Gramado para cerimônias ao ar livre</li>
           <li><svg><use href="#orn"/></svg>Piscina e área de convivência</li>
@@ -433,22 +456,6 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
       <div class="player">
         <video id="vid" src="video.mp4" poster="video-poster.jpg" playsinline preload="metadata"></video>
         <button class="play" id="playBtn" type="button" aria-label="Assistir ao vídeo"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5Z"/></svg></span></button>
-      </div>
-    </div>
-    <div class="wrap video-grid">
-      <div class="player">
-        <video id="vid2" src="video2.mp4" poster="video2-poster.jpg" playsinline preload="metadata"></video>
-        <button class="play" id="playBtn2" type="button" aria-label="Assistir ao passeio pela chácara"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5Z"/></svg></span></button>
-      </div>
-      <div>
-        <span class="tag"><svg class="ico"><use href="#palm"/></svg>Passeio pela chácara</span>
-        <h2 class="h2">Um dia comum <em class="g">na Ana Luiz</em></h2>
-        <p>O espaço do jeito que ele é: muito verde, árvores carregadas de fruta, campo gramado, salão amplo e a piscina com o céu do fim de tarde.</p>
-        <ul>
-          <li><svg><use href="#orn"/></svg>Campo de futebol gramado</li>
-          <li><svg><use href="#orn"/></svg>Árvores frutíferas por todo o terreno</li>
-          <li><svg><use href="#orn"/></svg>Piscina com vista para o pôr do sol</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -473,19 +480,20 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
           </ol>
           <div class="suite"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3"/></svg></span><div><b>Suíte no terraço</b><span>Acomoda 3 a 4 pessoas.</span></div></div>
         </div>
-        <div class="items">
-          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>200</b><span>cadeiras <small>plásticas com braço</small></span></div>
-          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>50</b><span>mesas <small>plásticas 70×70</small></span></div>
-          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>200</b><span>pratos <small>simples</small></span></div>
-          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>200</b><span>talheres <small>simples</small></span></div>
-          <div class="also">
-            <p>Também incluso</p>
-            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Taxa de limpeza</div>
-            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Gás</div>
-            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Material de banheiro</div>
-            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Utensílios simples de cozinha</div>
-          </div>
+        <div class="inc-list">
+          <h3>INCLUSO</h3>
+          <ul>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>200 cadeiras plásticas com braço</li>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>50 mesas plásticas 70×70</li>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>200 pratos simples</li>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>200 talheres simples</li>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>Taxa de limpeza</li>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>Gás</li>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>Material de banheiro</li>
+            <li><i class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 12.5 3.5 3.5L17.5 8.5"/></svg></i>Utensílios simples de cozinha</li>
+          </ul>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -502,11 +510,6 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
         <h2 class="h2">Um pouco <em class="g">sobre nós</em></h2>
       </div>
       <div class="grid-about">
-        <div class="cream a1">
-          <div class="hd"><h3>Nossa história</h3><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-5h4v5"/></svg></span></div>
-          <p>A Chácara Ana Luiz é um espaço de família, cuidado de perto pelo próprio dono. Foi pensada para receber as pessoas como se recebe em casa: com espaço, sombra, água fresca e tranquilidade para aproveitar o dia sem pressa.</p>
-        </div>
-        <div class="ph a2"><img src="f-historia.jpg" alt="Entrada do salão coberto sob as árvores, com a piscina ao lado" loading="lazy"></div>
         <div class="ph a3"><img src="f-alugar.jpg" alt="Piscina cercada de coqueiros sob o céu azul" loading="lazy"></div>
         <div class="cream a4">
           <div class="hd"><h3>Para que alugar</h3><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M5.6 5.6l2 2M18.4 5.6l-2 2"/><path d="M4 14h16l-1.5 6h-13Z"/><path d="M8 14a4 4 0 0 1 8 0"/></svg></span></div>
@@ -550,19 +553,20 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
     </div>
   </section>
 
-  <!-- COMO RESERVAR -->
-  <section class="steps-sec" id="reservar">
-    <svg class="leaf-bg" style="left:-100px;top:20%;width:440px;height:440px;opacity:.08" aria-hidden="true"><use href="#frond"/></svg>
-    <div class="wrap steps-grid">
-      <div class="sticky">
-        <span class="tag"><svg class="ico"><use href="#orn"/></svg>Sobre a reserva</span>
-        <h2 class="h2">Como <em class="g">reservar a sua data?</em></h2>
-        <p>Simples e sem burocracia. Tudo resolvido pelo WhatsApp.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><svg class="lf"><use href="#frond"/></svg><span class="pill"><i><svg><use href="#orn"/></svg></i>Passo 01</span><h3>Fale conosco</h3><p>Confira na agenda os fins de semana livres e chame no WhatsApp contando a data, o tipo de evento e quantas pessoas devem vir.</p></div>
-        <div class="step"><svg class="lf"><use href="#frond"/></svg><span class="pill"><i><svg><use href="#orn"/></svg></i>Passo 02</span><h3>Disponibilidade e valores</h3><p>O Agapito confirma se a data está livre, passa os valores e tira todas as suas dúvidas sobre o espaço.</p></div>
-        <div class="step"><svg class="lf"><use href="#frond"/></svg><span class="pill"><i><svg><use href="#orn"/></svg></i>Passo 03</span><h3>Data garantida</h3><p>Com tudo combinado, a chácara fica reservada para você. Na sexta à tarde você já pode trazer as coisas, e no sábado às 8h é só chegar e aproveitar.</p></div>
+  <!-- AVISO WHATSAPP -->
+  <section class="aviso-sec" id="reservar">
+    <div class="wrap">
+      <div class="aviso">
+        <img src="f-piscina.jpg" alt="" loading="lazy">
+        <span class="tag c"><svg class="ico"><use href="#wa"/></svg>Reservas pelo WhatsApp</span>
+        <h2 class="h2">Ao chamar no WhatsApp, <em class="g">já informe:</em></h2>
+        <ol class="info3">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><b>A data</b><small>que você quer saber se está disponível</small></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M12 3v3M8 13a4 4 0 0 1 8 0M4 13h16l-1 4H5Z"/></svg></span><b>O tipo de evento</b><small>aniversário, casamento, churrasco…</small></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></span><b>Quantas pessoas</b><small>número aproximado de convidados</small></li>
+        </ol>
+        <a class="cta js-wa" href="#reservar" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg>Chamar no WhatsApp</a>
+        <span class="tel js-tel"></span>
       </div>
     </div>
   </section>
@@ -579,31 +583,17 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
       </div>
       <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A1cara%20Ana%20Luiz%20Agapito%2C%20R.%20Valter%20Aparecido%20Zan%C3%A3o%2C%20770%2C%20Pai%C3%A7andu%20-%20PR" target="_blank" rel="noopener" aria-label="Abrir a localização da chácara no Google Maps">
         <svg class="st" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-93 -20 L-3 340"/><path d="M-50 -20 L40 340"/><path d="M0 -20 L90 340"/><path d="M50 -20 L140 340"/><path d="M86 -20 L176 340"/><path d="M133 -20 L223 340"/><path d="M186 -20 L276 340"/><path d="M225 -20 L315 340"/><path d="M275 -20 L365 340"/><path d="M325 -20 L415 340"/><path d="M362 -20 L452 340"/><path d="M416 -20 L506 340"/><path d="M457 -20 L547 340"/><path d="M500 -20 L590 340"/><path d="M547 -20 L637 340"/><path d="M598 -20 L688 340"/><path d="M-20 -11 L620 -81"/><path d="M-20 26 L620 -44"/><path d="M-20 70 L620 0"/><path d="M-20 110 L620 40"/><path d="M-20 159 L620 89"/><path d="M-20 199 L620 129"/><path d="M-20 235 L620 165"/><path d="M-20 286 L620 216"/><path d="M-20 320 L620 250"/><path d="M-20 364 L620 294"/></svg>
-        <div class="pin"><svg viewBox="0 0 42 52"><defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4E3B6"/><stop offset="1" stop-color="#A9864F"/></linearGradient></defs><path d="M21 51S3 31 3 19a18 18 0 0 1 36 0c0 12-18 32-18 32Z" fill="url(#pg)"/><circle cx="21" cy="19" r="7" fill="#12140E"/></svg><b>Chácara Ana Luiz</b></div>
+        <div class="pin"><svg viewBox="0 0 42 52"><defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4E3B6"/><stop offset="1" stop-color="#A9864F"/></linearGradient></defs><path d="M21 51S3 31 3 19a18 18 0 0 1 36 0c0 12-18 32-18 32Z" fill="url(#pg)"/><circle cx="21" cy="19" r="7" fill="#12140E"/></svg><b>Chácara Ana Luiz Agapito</b></div>
         <div class="open"><span>Paiçandu, PR</span><span>Ver no mapa <svg class="ico" style="width:14px;height:14px"><use href="#arrow"/></svg></span></div>
       </a>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="final" id="contato">
-    <div class="wrap">
-      <div class="box">
-        <img src="f-piscina.jpg" alt="" loading="lazy">
-        <span class="tag c"><svg class="ico"><use href="#wa"/></svg>Reservas</span>
-        <h2 class="h2">Vamos marcar a <em class="g">sua data?</em></h2>
-        <p>Consulte a disponibilidade e os valores direto com o Agapito.</p>
-        <a class="cta js-wa" href="#contato" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg>Falar no WhatsApp</a>
-        <span class="tel js-tel"></span>
-      </div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#topo"><svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" style="color:var(--gold)"><path d="M1 21c7-.6 10-7 15-7s8 6 23 7"/><path d="M11 15a7 7 0 0 1 14 0"/><path d="M31 21V7M31 7c-2-1.8-4.6-1.8-6-.8M31 7c2-1.8 4.6-1.8 6-.8M31 7c-.3-2.4-1.8-4-3.4-4.6M31 7c.3-2.4 1.8-4 3.4-4.6"/></svg><div><b>ANA LUIZ</b><small>CHÁCARA · AGAPITO</small></div></a>
-    <ul><li><a href="#agenda">Agenda</a></li><li><a href="#sobre">A chácara</a></li><li><a href="#reservar">Como reservar</a></li></ul>
+    <a class="brand" href="#topo"><svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" style="color:var(--gold)"><path d="M1 21c7-.6 10-7 15-7s8 6 23 7"/><path d="M11 15a7 7 0 0 1 14 0"/><path d="M31 21V7M31 7c-2-1.8-4.6-1.8-6-.8M31 7c2-1.8 4.6-1.8 6-.8M31 7c-.3-2.4-1.8-4-3.4-4.6M31 7c.3-2.4 1.8-4 3.4-4.6"/></svg><div><b>CHÁCARA ANA LUIZ AGAPITO</b></div></a>
+    <ul><li><a href="#agenda">Agenda</a></li><li><a href="#sobre">A chácara</a></li><li><a href="#reservar">Reservar</a></li></ul>
     <dl><dt>WhatsApp</dt><dd class="js-tel"></dd><dt>Endereço</dt><dd><a id="endereco" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A1cara%20Ana%20Luiz%20Agapito%2C%20R.%20Valter%20Aparecido%20Zan%C3%A3o%2C%20770%2C%20Pai%C3%A7andu%20-%20PR" target="_blank" rel="noopener" style="text-decoration:none"></a></dd><dd><button type="button" class="owner-link" id="ownerBtn">Área do proprietário</button></dd></dl>
   </div>
 </footer>
@@ -624,7 +614,7 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
   </div>
 </div>
 
-<a class="fab js-wa" href="#contato" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg><use href="#wa"/></svg></a>
+<a class="fab js-wa" href="#reservar" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg><use href="#wa"/></svg></a>
 
 <script>
 /* ===== DADOS DA CHÁCARA — trocar aqui ===== */
@@ -633,7 +623,7 @@ const WHATSAPP_EXIBIDO = "(44) 99951-2325";
 const ENDERECO = "R. Valter Aparecido Zanão, 770 · Paiçandu, PR";
 /* ========================================== */
 const waUrl = m => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(m);
-document.querySelectorAll(".js-wa").forEach(a => a.href = waUrl("Olá! Vi o site da Chácara Ana Luiz e gostaria de saber as datas disponíveis e os valores."));
+document.querySelectorAll(".js-wa").forEach(a => a.href = waUrl("Olá!"));
 document.querySelectorAll(".js-tel").forEach(el => el.textContent = WHATSAPP_EXIBIDO);
 document.getElementById("endereco").textContent = ENDERECO;
 
@@ -645,7 +635,7 @@ addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
 
 /* vídeo */
-const vids = [["vid","playBtn"],["vid2","playBtn2"]].map(([v, b]) => [document.getElementById(v), document.getElementById(b)]);
+const vids = [["vid","playBtn"]].map(([v, b]) => [document.getElementById(v), document.getElementById(b)]);
 vids.forEach(([vid, btn]) => {
   btn.onclick = () => { vids.forEach(([o]) => { if (o !== vid) o.pause(); }); btn.hidden = true; vid.controls = true; vid.play().catch(() => {}); };
   vid.addEventListener("ended", () => { vid.controls = false; btn.hidden = false; });
@@ -682,7 +672,7 @@ function weekendOf(d){ // [sábado, domingo] do fim de semana do dia (sáb ou do
 const fmt = d => pad(d.getDate()) + "/" + pad(d.getMonth() + 1);
 const DIAS = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
 function waDia(dt){
-  return waUrl(`Olá! Vi no site que o dia ${fmt(dt)} (${DIAS[dt.getDay()]}) está livre na Chácara Ana Luiz. Gostaria de saber os valores.`);
+  return waUrl("Olá!");
 }
 function changedCount(){
   let n = 0; booked.forEach(x => { if (!saved.has(x)) n++; }); saved.forEach(x => { if (!booked.has(x)) n++; }); return n;
