@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Chácara Ana Luiz Agapito em Paiçandu-PR: piscina, salão coberto, gramado para cerimônias e suíte. Locação do sábado às 8h ao domingo às 20h. Consulte as datas livres.">
+<meta property="og:title" content="Chácara Ana Luiz Agapito">
+<meta property="og:description" content="Chácara para festas e momentos em família em Paiçandu-PR. Veja as datas disponíveis.">
+<meta property="og:image" content="hero-desktop.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#12140E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312140E'/%3E%3Cg fill='none' stroke='%23CDA96D' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M4 23c5-.4 8-5 12-5s7 4.4 12 5'/%3E%3Cpath d='M9 18.5a7 7 0 0 1 14 0'/%3E%3Cpath d='M16 8v2.4'/%3E%3C/g%3E%3C/svg%3E">
+<title>Chácara Ana Luiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Manrope:wght@400;500;600&display=swap">
+<style>
+/* Linguagem da referência aplicada à chácara: fundo verde-noite com brilhos e ornamentos de linha, serifa + itálico dourado, menu em pílula, botões dourados com halo, cards creme alternando com fotos, seção clara topográfica, selo redondo nas transições. */
+:root{
+  color-scheme:dark;
+  --night:#12140E;
+  --night-2:#191C13;
+  --glow:#3A4A22;
+  --cream:#F3ECE0;
+  --cream-2:#E8DECD;
+  --cream-ink:#2A2A1F;
+  --cream-soft:#5E5D4E;
+  --gold:#CDA96D;
+  --gold-2:#EDD6A2;
+  --gold-grad:linear-gradient(100deg,#9F7E4E 0%,#C9A56C 45%,#F4E3B6 100%);
+  --text:#EFEBE1;
+  --text-soft:#B9B6A6;
+  --hair:rgba(205,169,109,.28);
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --max:1120px;
+  --gl:max(20px, env(safe-area-inset-left, 0px));
+  --gr:max(20px, env(safe-area-inset-right, 0px));
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--night);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--night)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:var(--gl);padding-right:var(--gr)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+em.g{font-style:italic;font-weight:500;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.ico{width:18px;height:18px;flex:none}
+
+/* ---------- MENU PÍLULA ---------- */
+.nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:0;right:0;z-index:50;padding-left:var(--gl);padding-right:var(--gr)}
+.nav-in{max-width:var(--max);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 20px;border-radius:999px;border:1px solid rgba(239,235,225,.14);background:rgba(18,20,14,.55);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);transition:background .4s}
+.nav.solid .nav-in{background:rgba(18,20,14,.88)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:40px;height:24px;color:var(--gold)}
+.brand div{display:grid;line-height:1}
+.brand b{font-family:var(--serif);font-weight:400;font-size:1.15rem;letter-spacing:.06em}
+.brand small{font-size:.56rem;letter-spacing:.42em;color:var(--gold);margin-top:4px}
+.nav ul{display:flex;gap:28px;white-space:nowrap;list-style:none;margin:0;padding:0;font-size:.82rem}
+.nav ul a{text-decoration:none;color:var(--text-soft);transition:color .2s}
+.nav ul a:hover{color:var(--text)}
+.ghost{display:inline-flex;align-items:center;gap:9px;text-decoration:none;border:1px solid rgba(239,235,225,.4);border-radius:999px;padding:10px 16px;font-size:.8rem;font-weight:500;transition:background .25s,color .25s}
+.ghost:hover{background:var(--text);color:var(--night)}
+.ghost .ico{width:16px;height:16px}
+@media (max-width:1100px){.nav ul{display:none}}
+.brand b,.ghost{white-space:nowrap}
+@media (max-width:420px){.ghost span{display:none}.ghost{padding:10px}}
+
+/* ---------- BOTÃO DOURADO ---------- */
+.cta{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;border:0;cursor:pointer;border-radius:999px;padding:19px 46px;background:var(--gold-grad);color:#2B2416;font:600 .95rem/1 var(--sans);box-shadow:0 0 0 7px rgba(205,169,109,.16),0 18px 40px -16px rgba(205,169,109,.6);transition:transform .3s,box-shadow .3s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 0 0 10px rgba(205,169,109,.2),0 22px 50px -16px rgba(205,169,109,.7)}
+.cta .ico{width:17px;height:17px}
+
+/* ---------- RÓTULO ---------- */
+.tag{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;color:var(--text);padding:6px 14px 6px 12px;border-left:2px solid var(--gold);background:linear-gradient(90deg,rgba(205,169,109,.14),transparent)}
+.tag .ico{width:15px;height:15px;color:var(--gold-2)}
+.tag.c{border-right:2px solid var(--gold);background:rgba(205,169,109,.1)}
+.on-cream .tag{color:var(--cream-ink);background:linear-gradient(90deg,rgba(205,169,109,.35),transparent)}
+.on-cream .tag .ico{color:#8B6A3A}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.2vw,3rem);line-height:1.1;letter-spacing:-.01em;margin:14px 0 0;text-wrap:balance}
+
+/* ornamento */
+.orn{width:22px;height:22px;color:var(--gold)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background:var(--night);overflow-x:clip;padding-top:78px}
+.hero-img::before{content:"";position:absolute;inset:0 0 auto;height:18%;background:linear-gradient(to bottom,var(--night),rgba(18,20,14,0));z-index:1;pointer-events:none}
+@media (min-width:701px){.hero{padding-top:92px}.hero-img::before{content:"";position:absolute;inset:0 0 auto;height:22%;background:linear-gradient(to bottom,var(--night),rgba(18,20,14,0));z-index:1;pointer-events:none}}
+.hero-img{position:relative}
+.hero-img img{width:100%;height:auto}
+.hero-img::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(to bottom,rgba(18,20,14,0),var(--night));pointer-events:none}
+.hero-txt{position:relative;text-align:center;padding-block:10px 110px;margin-top:-40px;z-index:2}
+.hero-txt .orn{margin:0 auto 18px;width:26px;height:26px}
+.hero h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.08;margin:0 auto;max-width:18ch;text-wrap:balance}
+.hero p{color:var(--text-soft);max-width:48ch;margin:20px auto 38px}
+.hero p b{color:var(--text);font-weight:600}
+.leaf-bg{position:absolute;pointer-events:none;color:var(--gold);opacity:.13}
+
+/* ---------- ESPAÇOS (carrossel) ---------- */
+.spaces{position:relative;padding-block:30px 100px;overflow:hidden}
+.sec-head{display:flex;align-items:center;gap:22px}
+.sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),rgba(205,169,109,.25))}
+.sec-head .h2{margin:0;white-space:nowrap}
+@media (max-width:560px){.sec-head .line,.sec-head .orn{display:none}.sec-head .h2{white-space:normal}}
+.rail-wrap{position:relative;margin-top:44px}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-left:max(var(--gl),calc((100vw - var(--max))/2 + 20px));padding-right:var(--gr);padding-bottom:6px}
+.rail::-webkit-scrollbar{display:none}
+.card{position:relative;flex:0 0 clamp(260px,26vw,300px);aspect-ratio:3/4.3;max-width:100%;border-radius:10px;overflow:hidden;scroll-snap-align:start;border:1px solid rgba(239,235,225,.1);background:var(--night-2);isolation:isolate}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.card:hover img{transform:scale(1.06)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,20,14,.15) 0%,rgba(18,20,14,.2) 28%,rgba(18,20,14,.88) 58%,#12140E 100%);z-index:1}
+.card .top{position:absolute;top:22px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:center;z-index:2;font-size:.8rem;color:rgba(239,235,225,.8)}
+.card .top .orn{width:18px;height:18px}
+.card .body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 26px 30px}
+.card h3{font-family:var(--sans);font-weight:500;font-size:1.45rem;line-height:1.2;margin:0 0 14px;padding-bottom:14px;border-bottom:1px solid var(--hair)}
+.card h3 span{color:var(--gold)}
+.card p{margin:0;color:var(--text-soft);font-size:.93rem;line-height:1.55}
+.rail-ctrl{display:flex;gap:10px;justify-content:flex-end;margin-top:22px}
+.rail-ctrl button{width:44px;height:44px;border-radius:50%;border:1px solid var(--hair);background:transparent;color:var(--gold-2);cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.rail-ctrl button:hover{background:rgba(205,169,109,.14)}
+.rail-ctrl svg{width:18px;height:18px}
+
+/* divisor */
+.divider{display:flex;align-items:center;gap:14px;max-width:640px;margin:0 auto;padding-block:20px}
+.divider i{flex:1;height:1px;background:var(--hair);position:relative}
+.divider i::before{content:"";position:absolute;top:-3px;width:7px;height:7px;background:var(--gold-2);transform:rotate(45deg)}
+.divider i:first-child::before{left:-3px}.divider i:last-child::before{right:-3px}
+
+/* ---------- INCLUSO ---------- */
+.incl{position:relative;padding-block:70px 40px}
+.incl-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;margin-top:50px}
+.incl-grid > *{min-width:0}
+.sched{background:var(--cream);color:var(--cream-ink);border-radius:8px;padding:clamp(26px,3.4vw,40px);position:relative;overflow:hidden}
+.sched .lf{position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;color:#C9B48E;opacity:.3;pointer-events:none}
+.sched h3{font-family:var(--sans);font-weight:500;font-size:1.5rem;margin:0;padding-bottom:16px;border-bottom:1px solid rgba(42,42,31,.22);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tl{list-style:none;margin:26px 0 0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:11px;top:10px;bottom:10px;width:1px;background:linear-gradient(#C9A56C,#E7D3AA)}
+.tl li{position:relative;display:grid;grid-template-columns:24px 1fr;gap:18px;padding-bottom:24px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";width:11px;height:11px;margin:7px 0 0 6px;border-radius:50%;background:var(--cream);border:2px solid #C49A5C}
+.tl li.main::before{background:#C9A56C}
+.tl .d{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#8B6A3A;font-weight:600}
+.tl .h{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,2.5rem);line-height:1.05;color:var(--cream-ink)}
+.tl .h em{font-style:italic;color:#A6814A}
+.tl p{margin:4px 0 0;color:var(--cream-soft);font-size:.95rem}
+.suite{margin-top:26px;display:flex;gap:14px;align-items:center;background:rgba(201,165,108,.16);border:1px solid rgba(201,165,108,.4);border-radius:8px;padding:14px 16px;position:relative}
+.suite .badge{width:38px;height:38px}
+.suite b{display:block;font-weight:600;font-size:.95rem}
+.suite span{color:var(--cream-soft);font-size:.9rem}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start}
+.num{position:relative;border-radius:8px;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(58,74,34,.35),rgba(25,28,19,.6));padding:24px 24px 22px;overflow:hidden}
+.num b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:lining-nums}
+.num span{display:block;margin-top:10px;padding-top:10px;border-top:1px solid var(--hair);color:var(--text);font-size:.95rem}
+.num small{color:var(--text-soft);font-size:.85rem}
+.num .orn{position:absolute;top:18px;right:18px;width:18px;height:18px;opacity:.7}
+.also{grid-column:1/-1;border-radius:8px;border:1px solid var(--hair);padding:22px 24px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px}
+.also p{grid-column:1/-1;margin:0 0 4px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.also div{display:flex;align-items:center;gap:12px;font-size:.97rem}
+.also i{width:24px;height:24px;border-radius:50%;background:rgba(205,169,109,.18);display:grid;place-items:center;flex:none;color:var(--gold-2)}
+.also i svg{width:13px;height:13px}
+@media (max-width:860px){.incl-grid{grid-template-columns:1fr}}
+@media (max-width:460px){.items{grid-template-columns:1fr 1fr;gap:10px}.num{padding:18px 16px}.also{grid-template-columns:1fr}}
+
+
+/* ---------- VÍDEO ---------- */
+.video-sec{position:relative;padding-block:30px 100px;overflow-x:clip}
+.video-grid{display:grid;grid-template-columns:1fr auto;gap:clamp(36px,7vw,100px);align-items:center;position:relative;z-index:1}
+.video-grid > *{min-width:0}
+.video-grid p{color:var(--text-soft);max-width:44ch;margin:18px 0 0}
+.video-grid ul{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
+.video-grid li{display:flex;align-items:center;gap:12px;color:var(--text)}
+.video-grid li svg{width:18px;height:18px;color:var(--gold);flex:none}
+.player{position:relative;width:min(340px,82vw);aspect-ratio:9/16;max-width:100%;border-radius:22px;padding:6px;background:linear-gradient(160deg,#EBD3A0,#8E6E42 55%,#EBD3A0);box-shadow:0 0 0 1px rgba(205,169,109,.3),0 40px 90px -30px rgba(205,169,109,.45);justify-self:center}
+.player::before{content:"";position:absolute;inset:-60px;z-index:-1;background:radial-gradient(closest-side,rgba(205,169,109,.22),transparent);pointer-events:none}
+.player video{width:100%;height:100%;object-fit:cover;border-radius:17px;background:#000;display:block}
+.play{position:absolute;inset:6px;border-radius:17px;border:0;background:linear-gradient(to top,rgba(18,20,14,.55),rgba(18,20,14,.05) 55%);cursor:pointer;display:grid;place-items:center;color:#2B2416}
+.play span{width:76px;height:76px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(237,214,162,.22)}
+.play svg{width:26px;height:26px;margin-left:4px}
+.video-grid + .video-grid{margin-top:clamp(70px,9vw,120px);grid-template-columns:auto 1fr}
+@media (max-width:820px){.video-grid,.video-grid + .video-grid{grid-template-columns:1fr}.video-grid + .video-grid .player{order:2}.video-grid > div:not(.player){text-align:center}.video-grid p{margin-inline:auto}.video-grid ul{justify-content:center}}
+
+/* ---------- AGENDA ---------- */
+.agenda{position:relative;padding-block:120px 60px;background:radial-gradient(50% 45% at 100% 30%,rgba(58,74,34,.5),transparent 70%);overflow-x:clip}
+.agenda .intro-p{color:var(--text-soft);max-width:50ch;margin:16px auto 0}
+.ag-grid{display:grid;grid-template-columns:1fr;max-width:720px;margin-inline:auto;gap:16px;margin-top:50px;position:relative;z-index:1}
+.ag-grid > *{min-width:0}
+.cal{background:var(--cream);color:var(--cream-ink);border-radius:10px;padding:clamp(18px,3vw,32px)}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid rgba(42,42,31,.2)}
+.cal-head h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2.6vw,1.9rem);margin:0;text-transform:capitalize}
+.cal-head button{width:40px;height:40px;border-radius:50%;border:1px solid rgba(42,42,31,.25);background:transparent;color:var(--cream-ink);cursor:pointer;display:grid;place-items:center}
+.cal-head button:hover{background:rgba(201,165,108,.2)}
+.cal-head button:disabled{opacity:.3;cursor:default}
+.cal-head svg{width:16px;height:16px}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.dow{margin:16px 0 8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-soft);text-align:center}
+.dow span:first-child,.dow span:last-child{color:#8B6A3A;font-weight:600}
+.day{position:relative;aspect-ratio:1;max-width:100%;border-radius:8px;display:grid;place-items:center;font-size:.95rem;font-variant-numeric:tabular-nums;color:var(--cream-soft);border:1px solid transparent;text-decoration:none;font-family:var(--sans);background:none;padding:0}
+.day.empty{visibility:hidden}
+.day.past{opacity:.35}
+.day.free{color:var(--cream-ink);font-weight:600;border-color:rgba(42,42,31,.14);cursor:pointer;transition:background .15s,border-color .15s}
+a.day.free:hover{background:rgba(201,165,108,.18);border-color:#C49A5C}
+.day.booked{background:var(--gold-grad);color:#2B2416;font-weight:600;box-shadow:0 6px 14px -8px rgba(140,100,40,.6)}
+.day.today{border-color:#8B6A3A}
+.cal.admin .day:not(.empty):not(.past){cursor:pointer}
+.cal.admin .day:not(.empty):not(.past):hover{outline:2px solid #C49A5C;outline-offset:1px}
+.day.changed{outline:2px dashed #8B6A3A;outline-offset:1px}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:.85rem;color:var(--cream-soft)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:7px}
+.legend .lf{background:transparent;border:1px solid rgba(42,42,31,.3)}.legend .lb{background:var(--gold-grad)}
+.adminbar{margin-top:18px;border-radius:10px;background:#2C3020;color:var(--text);padding:16px 18px;display:grid;gap:12px}
+.adminbar b{color:var(--gold-2);font-weight:600}
+.adminbar p{margin:0;font-size:.9rem;color:var(--text-soft)}
+.adminbar .acts{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn-s{border:0;border-radius:999px;padding:12px 20px;font:600 .88rem/1 var(--sans);cursor:pointer}
+.btn-s.gold{background:var(--gold-grad);color:#2B2416}
+.btn-s.line{background:transparent;color:var(--text);border:1px solid rgba(239,235,225,.35)}
+.btn-s:disabled{opacity:.5;cursor:default}
+.msg{font-size:.88rem;color:var(--gold-2)}
+.next{border:1px solid var(--hair);border-radius:10px;padding:clamp(20px,3vw,30px);background:linear-gradient(160deg,rgba(58,74,34,.3),rgba(25,28,19,.5))}
+.next h3{font-family:var(--sans);font-weight:500;font-size:1.2rem;margin:0 0 6px}
+.next > p{margin:0 0 18px;color:var(--text-soft);font-size:.9rem}
+.wk{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--hair);text-decoration:none}
+.wk b{font-family:var(--serif);font-weight:400;font-size:1.25rem;display:block;line-height:1.2}
+.wk small{color:var(--text-soft);font-size:.82rem}
+.wk span.go{flex:none;width:36px;height:36px;border-radius:50%;background:rgba(205,169,109,.16);color:var(--gold-2);display:grid;place-items:center;transition:background .2s}
+.wk:hover span.go{background:var(--gold);color:#2B2416}
+.wk span.go svg{width:16px;height:16px}
+.none{color:var(--text-soft);font-size:.92rem;padding:14px 0;border-top:1px solid var(--hair)}
+@media (max-width:860px){.ag-grid{grid-template-columns:1fr}}
+@media (max-width:420px){.dow,.days{gap:4px}.day{font-size:.85rem;border-radius:6px}}
+
+/* área do proprietário */
+.owner-link{background:none;border:0;padding:0;color:var(--text-soft);font:500 .8rem var(--sans);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.modal{position:fixed;inset:0;z-index:80;background:rgba(10,11,7,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+.modal .box2{width:min(420px,100%);background:var(--cream);color:var(--cream-ink);border-radius:14px;padding:34px 28px 28px;text-align:center;position:relative}
+.modal .box2 .orn{width:30px;height:30px;color:#A6814A;margin:0 auto 10px}
+.modal h3{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin:0}
+.modal p{color:var(--cream-soft);margin:12px 0 22px;font-size:.95rem}
+.modal .row2{display:grid;gap:10px}
+.modal .btn-s.line{color:var(--cream-ink);border-color:rgba(42,42,31,.3)}
+.lform{display:grid;gap:12px;text-align:left}
+.lform label{display:grid;gap:6px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-soft);font-weight:600}
+.lform input{font:400 1rem/1.3 var(--sans);color:var(--cream-ink);background:#fff;border:1px solid rgba(42,42,31,.2);border-radius:10px;padding:13px 14px;width:100%;min-width:0;letter-spacing:0;text-transform:none}
+.lform input:focus{outline:none;border-color:#A6814A;box-shadow:0 0 0 3px rgba(201,165,108,.25)}
+.pw{position:relative;display:block}
+.pw input{padding-right:84px}
+.pw button{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;color:#8B6A3A;font:600 .78rem var(--sans);letter-spacing:0;text-transform:none;padding:8px 10px;cursor:pointer}
+.lerr{margin:0;color:#A2381F;font-size:.9rem;text-align:center}
+.lform .btn-s{width:100%;padding:15px 20px}
+.cal-note{margin:14px 0 0;font-size:.9rem;color:#8B6A3A}
+
+/* ---------- SOBRE ---------- */
+.about{position:relative;overflow-x:clip;padding-block:70px 130px;background:radial-gradient(60% 50% at 100% 0%,rgba(58,74,34,.55),transparent 70%),radial-gradient(50% 40% at 0% 100%,rgba(58,74,34,.45),transparent 70%)}
+.center{text-align:center}
+.grid-about{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:56px;position:relative;z-index:1}
+.cream{background:var(--cream);color:var(--cream-ink);border-radius:8px;padding:clamp(24px,3vw,36px);min-width:0;display:flex;flex-direction:column;justify-content:center}
+.cream .hd{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid rgba(42,42,31,.22)}
+.cream h3{font-family:var(--sans);font-weight:500;font-size:1.6rem;margin:0;letter-spacing:-.01em}
+.badge{width:34px;height:34px;border-radius:7px;background:linear-gradient(145deg,#F3D9A4,#D8B074);display:grid;place-items:center;color:#5A4220;border:1px solid #C49A5C;flex:none}
+.badge svg{width:18px;height:18px}
+.cream p{margin:0;color:var(--cream-soft);font-size:.98rem}
+.ph{border-radius:8px;overflow:hidden;min-height:240px;position:relative;border:1px solid rgba(239,235,225,.12)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.a1{grid-column:span 7}.a2{grid-column:span 5}.a3{grid-column:span 5}.a4{grid-column:span 7}.a5{grid-column:span 7}.a6{grid-column:span 5}
+@media (max-width:820px){.grid-about{grid-template-columns:1fr}.a1,.a2,.a3,.a4,.a5,.a6{grid-column:span 1}.a3{order:4}.a4{order:3}}
+
+/* ---------- SELO / NOTCH ---------- */
+.seal{position:absolute;left:50%;top:0;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;background:var(--night);display:grid;place-items:center;z-index:5;box-shadow:0 0 0 6px var(--cream)}
+.seal.dark{box-shadow:0 0 0 6px var(--night);background:var(--night)}
+.seal svg.ring{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);animation:spin 28s linear infinite}
+.seal svg.ring text{font:600 7.6px var(--sans);letter-spacing:2.2px;fill:var(--gold)}
+.seal .orn{width:26px;height:26px}
+.seal::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1px solid var(--hair)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- SEÇÃO CREME ---------- */
+.on-cream{position:relative;background:var(--cream);color:var(--cream-ink);padding-block:130px 140px}
+.topo-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.topo{position:absolute;inset:0;width:100%;height:100%;color:#BFAE8E;opacity:.45;pointer-events:none}
+.feat{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,90px);align-items:center}
+.feat > *{min-width:0}
+.feat .h2{color:var(--cream-ink)}
+.feat .h2 .gold{color:#B18D55}
+.feat p{color:var(--cream-soft);margin:18px 0 0;max-width:46ch}
+.feat p .hl{color:#A6814A;font-weight:500}
+.feat .cta{margin-top:34px}
+.frame{position:relative;padding:6px;border-radius:6px;background:linear-gradient(145deg,#EBD7AE,#F7EEDC);box-shadow:0 30px 70px -30px rgba(60,45,20,.45)}
+.frame .inner{border-radius:4px;overflow:hidden;aspect-ratio:4/5;max-width:100%}
+.frame img{width:100%;height:100%;object-fit:cover}
+.chip{position:absolute;display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 16px 8px 8px;background:var(--gold-grad);color:#2B2416;font-size:.8rem;font-weight:600;box-shadow:0 10px 24px -10px rgba(90,60,20,.55);white-space:nowrap}
+.chip i{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.4);display:grid;place-items:center}
+.chip i svg{width:14px;height:14px}
+.chip.c1{left:-28px;bottom:22%}
+.chip.c2{right:-20px;top:14%}
+.mini-seal{position:absolute;right:-26px;top:-26px;width:64px;height:64px;border-radius:50%;background:var(--night);display:grid;place-items:center;border:2px solid #EBD7AE}
+.mini-seal .orn{width:22px;height:22px}
+@media (max-width:860px){.feat{grid-template-columns:1fr}.chip.c1{left:10px}.chip.c2{right:10px}.mini-seal{right:8px;top:-22px}}
+
+/* ---------- COMO RESERVAR ---------- */
+.steps-sec{position:relative;overflow-x:clip;padding-block:130px 70px;background:radial-gradient(45% 50% at 0% 60%,rgba(58,74,34,.5),transparent 70%)}
+.steps-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,80px);align-items:start;position:relative;z-index:1}
+.steps-grid > *{min-width:0}
+.sticky{position:sticky;top:120px}
+.sticky p{color:var(--text-soft);max-width:34ch;margin:18px 0 0}
+.steps{display:grid;gap:12px}
+.step{position:relative;overflow:hidden;background:var(--cream);color:var(--cream-ink);border-radius:8px;padding:28px 30px 30px}
+.step .pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:4px 12px 4px 5px;background:linear-gradient(90deg,#F2D7A0,#F5E6C6);font-size:.76rem;color:#5A4220;font-weight:500}
+.step .pill i{width:20px;height:20px;border-radius:50%;background:#E3B970;display:grid;place-items:center}
+.step .pill i svg{width:11px;height:11px}
+.step h3{font-family:var(--sans);font-weight:500;font-size:1.3rem;margin:16px 0 8px}
+.step p{margin:0;color:var(--cream-soft);font-size:.97rem;max-width:52ch}
+.step .lf{position:absolute;right:-30px;top:-20px;width:160px;height:160px;color:#C9B48E;opacity:.35;pointer-events:none}
+@media (max-width:820px){.steps-grid{grid-template-columns:1fr}.sticky{position:static}}
+
+
+/* ---------- LOCALIZAÇÃO ---------- */
+.local{padding-block:20px 90px}
+.loc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,80px);align-items:center}
+.loc-grid > *{min-width:0}
+.loc-grid address{font-style:normal;margin:18px 0 0;font-size:1.05rem;color:var(--text);line-height:1.5}
+.loc-grid address span{display:block;color:var(--text-soft);font-size:.95rem}
+.loc-grid .cta{margin-top:30px}
+.map{position:relative;display:block;aspect-ratio:16/10;max-width:100%;border-radius:14px;overflow:hidden;border:1px solid var(--hair);background:#1B2016;text-decoration:none;isolation:isolate}
+.map svg.st{position:absolute;inset:0;width:100%;height:100%;stroke:rgba(201,198,170,.22);stroke-width:1.4;fill:none}
+.map::after{content:"";position:absolute;inset:0;background:radial-gradient(40% 50% at 50% 46%,rgba(205,169,109,.22),transparent 70%),linear-gradient(to top,rgba(18,20,14,.7),transparent 40%);pointer-events:none}
+.pin{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);z-index:2;display:grid;justify-items:center;gap:8px}
+.pin svg{width:42px;height:52px;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
+.pin b{font-family:var(--serif);font-weight:400;font-size:1.05rem;color:var(--text);white-space:nowrap;background:rgba(18,20,14,.75);border:1px solid var(--hair);border-radius:999px;padding:6px 14px}
+.map .open{position:absolute;left:16px;bottom:16px;right:16px;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--text-soft);font-size:.85rem}
+.map .open span:last-child{color:var(--gold-2);font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.map:hover .open span:last-child{text-decoration:underline}
+@media (max-width:820px){.loc-grid{grid-template-columns:1fr}}
+
+/* ---------- CTA FINAL ---------- */
+.final{padding-block:40px 110px}
+.box{position:relative;overflow:hidden;border-radius:14px;border:1px solid rgba(239,235,225,.22);padding:clamp(56px,8vw,90px) 24px;text-align:center;isolation:isolate}
+.box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(6px) brightness(.45) saturate(1.1);transform:scale(1.08);z-index:-2}
+.box::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 50% 50%,rgba(18,20,14,.35),rgba(18,20,14,.8));z-index:-1}
+.box .h2{max-width:14ch;margin:18px auto 0}
+.box p{color:var(--text-soft);margin:16px auto 34px;max-width:44ch}
+.box .tel{display:block;margin-top:22px;font-size:.88rem;color:var(--text-soft);user-select:all}
+
+/* ---------- RODAPÉ ---------- */
+footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px + env(safe-area-inset-bottom,0px))}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;align-items:center}
+.foot ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;flex-wrap:wrap;font-size:.86rem}
+.foot ul a{text-decoration:none;color:var(--text-soft)}
+.foot dl{margin:0;display:grid;gap:2px;font-size:.88rem;text-align:right}
+.foot dt{color:var(--gold);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}
+.foot dd{margin:0 0 8px;color:var(--text)}
+@media (max-width:640px){.foot dl{text-align:left}}
+
+/* WhatsApp flutuante */
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:55;width:58px;height:58px;border-radius:50%;background:var(--gold-grad);color:#2B2416;display:grid;place-items:center;box-shadow:0 0 0 6px rgba(205,169,109,.18),0 14px 30px -10px rgba(0,0,0,.6)}
+.fab svg{width:26px;height:26px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<style>body{margin:0}</style>
+<script src="config.js"></script>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></symbol>
+  <!-- ornamento: sol nascendo atrás do morro com coqueiro -->
+  <symbol id="orn" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 24c5-.4 8-5 12-5s7 4.4 14 5"/><path d="M8 19.5a8 8 0 0 1 16 0"/><path d="M16 8v2.4M9.6 10.6l1.6 1.7M22.4 10.6l-1.6 1.7"/><path d="M5 27.5h22"/></g></symbol>
+  <symbol id="palm" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M16 29V12"/><path d="M16 12c-2.5-3-7-3.4-10-1.6M16 12c2.5-3 7-3.4 10-1.6M16 12c-.6-4-4-6.5-7.6-6.6M16 12c.6-4 4-6.5 7.6-6.6M16 12c0-3 1-5.6 2.4-8"/></g></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <!-- folha de coqueiro grande, só contorno, para o fundo -->
+  <symbol id="frond" viewBox="0 0 400 400"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 380C80 260 200 150 380 60"/><path d="M20 380C120 300 230 250 360 230C250 240 140 290 20 380Z"/><path d="M20 380C90 250 160 150 250 40C190 150 110 260 20 380Z"/><path d="M60 330C150 250 250 190 390 150"/><path d="M60 330C110 230 170 140 200 20"/></g></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#topo" aria-label="Chácara Ana Luiz, início">
+      <svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M1 21c7-.6 10-7 15-7s8 6 23 7"/><path d="M11 15a7 7 0 0 1 14 0"/><path d="M31 21V7M31 7c-2-1.8-4.6-1.8-6-.8M31 7c2-1.8 4.6-1.8 6-.8M31 7c-.3-2.4-1.8-4-3.4-4.6M31 7c.3-2.4 1.8-4 3.4-4.6"/></svg>
+      <div><b>ANA LUIZ</b><small>CHÁCARA</small></div>
+    </a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="#video">Vídeo</a></li>
+        <li><a href="#incluso">O que inclui</a></li>
+        <li><a href="#sobre">A chácara</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#reservar">Como reservar</a></li>
+        <li><a href="#local">Localização</a></li>
+      </ul>
+    </nav>
+    <a class="ghost js-wa" href="#contato" target="_blank" rel="noopener"><span>Consultar datas</span><svg class="ico"><use href="#wa"/></svg></a>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="sr">Chácara Ana Luiz Agapito: aluguel para festas, confraternizações e fins de semana</h1>
+    <div class="hero-img">
+      <picture>
+        <source media="(max-width: 700px)" srcset="hero-mobile.jpg">
+        <img src="hero-desktop.jpg" alt="Chácara Ana Luiz Agapito ao pôr do sol, com piscina, salão coberto, terraço e coqueiros" fetchpriority="high">
+      </picture>
+    </div>
+    <svg class="leaf-bg" style="left:-120px;bottom:-60px;width:420px;height:420px" aria-hidden="true"><use href="#frond"/></svg>
+    <svg class="leaf-bg" style="right:-140px;bottom:40px;width:380px;height:380px;transform:scaleX(-1)" aria-hidden="true"><use href="#frond"/></svg>
+    <div class="wrap hero-txt">
+      <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+      <h2>Chácara para festas e <em class="g">momentos em família</em></h2>
+      <p>Piscina, salão coberto, gramado para cerimônias e suíte no terraço. <b>Do sábado às 8h ao domingo às 20h.</b></p>
+      <a class="cta" href="#agenda">Ver datas disponíveis <svg class="ico"><use href="#arrow"/></svg></a>
+    </div>
+  </section>
+
+
+  <!-- VÍDEO -->
+  <section class="video-sec" id="video">
+    <svg class="leaf-bg" style="right:-120px;top:10%;width:420px;height:420px;opacity:.08;transform:scaleX(-1)" aria-hidden="true"><use href="#frond"/></svg>
+    <div class="wrap video-grid">
+      <div>
+        <span class="tag"><svg class="ico"><use href="#orn"/></svg>Conheça em vídeo</span>
+        <h2 class="h2">Veja a chácara <em class="g">pronta para o seu evento</em></h2>
+        <p>Do gramado montado para a cerimônia ao salão com as mesas postas. Assim a Ana Luiz recebe quem você ama.</p>
+        <ul>
+          <li><svg><use href="#orn"/></svg>Gramado para cerimônias ao ar livre</li>
+          <li><svg><use href="#orn"/></svg>Piscina e área de convivência</li>
+          <li><svg><use href="#orn"/></svg>Salão coberto para a recepção</li>
+        </ul>
+      </div>
+      <div class="player">
+        <video id="vid" src="video.mp4" poster="video-poster.jpg" playsinline preload="metadata"></video>
+        <button class="play" id="playBtn" type="button" aria-label="Assistir ao vídeo"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5Z"/></svg></span></button>
+      </div>
+    </div>
+    <div class="wrap video-grid">
+      <div class="player">
+        <video id="vid2" src="video2.mp4" poster="video2-poster.jpg" playsinline preload="metadata"></video>
+        <button class="play" id="playBtn2" type="button" aria-label="Assistir ao passeio pela chácara"><span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5Z"/></svg></span></button>
+      </div>
+      <div>
+        <span class="tag"><svg class="ico"><use href="#palm"/></svg>Passeio pela chácara</span>
+        <h2 class="h2">Um dia comum <em class="g">na Ana Luiz</em></h2>
+        <p>O espaço do jeito que ele é: muito verde, árvores carregadas de fruta, campo gramado, salão amplo e a piscina com o céu do fim de tarde.</p>
+        <ul>
+          <li><svg><use href="#orn"/></svg>Campo de futebol gramado</li>
+          <li><svg><use href="#orn"/></svg>Árvores frutíferas por todo o terreno</li>
+          <li><svg><use href="#orn"/></svg>Piscina com vista para o pôr do sol</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider" aria-hidden="true"><i></i><svg class="orn"><use href="#orn"/></svg><i></i></div></div>
+
+  <!-- INCLUSO -->
+  <section class="incl" id="incluso">
+    <div class="wrap">
+      <div class="center">
+        <span class="tag c"><svg class="ico"><use href="#orn"/></svg>Sua locação</span>
+        <h2 class="h2">O que está <em class="g">incluso</em></h2>
+      </div>
+      <div class="incl-grid">
+        <div class="sched">
+          <svg class="lf" aria-hidden="true"><use href="#frond"/></svg>
+          <h3>Horário da locação <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span></h3>
+          <ol class="tl">
+            <li><div><div class="d">Sexta-feira</div><div class="h"><em>à tarde</em></div><p>Liberada para montagem e movimentação.</p></div></li>
+            <li class="main"><div><div class="d">Sábado</div><div class="h">08h</div><p>Entrada.</p></div></li>
+            <li class="main"><div><div class="d">Domingo</div><div class="h">20h</div><p>Saída.</p></div></li>
+          </ol>
+          <div class="suite"><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3"/></svg></span><div><b>Suíte no terraço</b><span>Acomoda 3 a 4 pessoas.</span></div></div>
+        </div>
+        <div class="items">
+          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>200</b><span>cadeiras <small>plásticas com braço</small></span></div>
+          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>50</b><span>mesas <small>plásticas 70×70</small></span></div>
+          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>200</b><span>pratos <small>simples</small></span></div>
+          <div class="num"><svg class="orn"><use href="#orn"/></svg><b>200</b><span>talheres <small>simples</small></span></div>
+          <div class="also">
+            <p>Também incluso</p>
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Taxa de limpeza</div>
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Gás</div>
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Material de banheiro</div>
+            <div><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4.5 4.5L19 7"/></svg></i>Utensílios simples de cozinha</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider" aria-hidden="true"><i></i><svg class="orn"><use href="#orn"/></svg><i></i></div></div>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <svg class="leaf-bg" style="left:-80px;top:30%;width:360px;height:360px;opacity:.09" aria-hidden="true"><use href="#frond"/></svg>
+    <svg class="leaf-bg" style="right:-80px;top:50%;width:360px;height:360px;opacity:.09;transform:scaleX(-1)" aria-hidden="true"><use href="#frond"/></svg>
+    <div class="wrap">
+      <div class="center">
+        <span class="tag c"><svg class="ico"><use href="#orn"/></svg>Sobre a chácara</span>
+        <h2 class="h2">Um pouco <em class="g">sobre nós</em></h2>
+      </div>
+      <div class="grid-about">
+        <div class="cream a1">
+          <div class="hd"><h3>Nossa história</h3><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-5h4v5"/></svg></span></div>
+          <p>A Chácara Ana Luiz é um espaço de família, cuidado de perto pelo próprio dono. Foi pensada para receber as pessoas como se recebe em casa: com espaço, sombra, água fresca e tranquilidade para aproveitar o dia sem pressa.</p>
+        </div>
+        <div class="ph a2"><img src="f-historia.jpg" alt="Entrada do salão coberto sob as árvores, com a piscina ao lado" loading="lazy"></div>
+        <div class="ph a3"><img src="f-alugar.jpg" alt="Piscina cercada de coqueiros sob o céu azul" loading="lazy"></div>
+        <div class="cream a4">
+          <div class="hd"><h3>Para que alugar</h3><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M5.6 5.6l2 2M18.4 5.6l-2 2"/><path d="M4 14h16l-1.5 6h-13Z"/><path d="M8 14a4 4 0 0 1 8 0"/></svg></span></div>
+          <p>Casamentos, aniversários, churrascos de família, confraternizações de empresa e da igreja, chá de bebê, encontros de amigos e aquele fim de semana ou feriado longe da cidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- AGENDA -->
+  <section class="agenda" id="agenda">
+    <div class="wrap">
+      <div class="center">
+        <span class="tag c"><svg class="ico"><use href="#orn"/></svg>Agenda</span>
+        <h2 class="h2">Datas <em class="g">disponíveis</em></h2>
+        <p class="intro-p">As datas em dourado já estão reservadas. Toque em um fim de semana livre para consultar direto pelo WhatsApp.</p>
+      </div>
+      <div class="ag-grid">
+        <div class="cal" id="cal">
+          <div class="cal-head">
+            <button type="button" id="calPrev" aria-label="Mês anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 5 8 12l7 7"/></svg></button>
+            <h3 id="calTitle"></h3>
+            <button type="button" id="calNext" aria-label="Próximo mês"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m9 5 7 7-7 7"/></svg></button>
+          </div>
+          <div class="dow" aria-hidden="true"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div>
+          <div class="days" id="calDays"></div>
+          <div class="legend"><span><i class="lb"></i>Reservado</span><span><i class="lf"></i>Livre</span></div>
+          <p class="cal-note" id="calNote" hidden></p>
+          <div class="adminbar" id="adminBar" hidden>
+            <p><b>Modo proprietário.</b> Toque em um dia para marcar como reservado ou livre. Sábado e domingo mudam juntos.</p>
+            <div class="acts">
+              <button type="button" class="btn-s gold" id="saveBtn" disabled>Salvar agenda</button>
+              <button type="button" class="btn-s line" id="exitBtn">Sair</button>
+              <button type="button" class="btn-s line" id="logoutBtn">Desconectar</button>
+              <span class="msg" id="adminMsg" role="status"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO RESERVAR -->
+  <section class="steps-sec" id="reservar">
+    <svg class="leaf-bg" style="left:-100px;top:20%;width:440px;height:440px;opacity:.08" aria-hidden="true"><use href="#frond"/></svg>
+    <div class="wrap steps-grid">
+      <div class="sticky">
+        <span class="tag"><svg class="ico"><use href="#orn"/></svg>Sobre a reserva</span>
+        <h2 class="h2">Como <em class="g">reservar a sua data?</em></h2>
+        <p>Simples e sem burocracia. Tudo resolvido pelo WhatsApp.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><svg class="lf"><use href="#frond"/></svg><span class="pill"><i><svg><use href="#orn"/></svg></i>Passo 01</span><h3>Fale conosco</h3><p>Confira na agenda os fins de semana livres e chame no WhatsApp contando a data, o tipo de evento e quantas pessoas devem vir.</p></div>
+        <div class="step"><svg class="lf"><use href="#frond"/></svg><span class="pill"><i><svg><use href="#orn"/></svg></i>Passo 02</span><h3>Disponibilidade e valores</h3><p>O Agapito confirma se a data está livre, passa os valores e tira todas as suas dúvidas sobre o espaço.</p></div>
+        <div class="step"><svg class="lf"><use href="#frond"/></svg><span class="pill"><i><svg><use href="#orn"/></svg></i>Passo 03</span><h3>Data garantida</h3><p>Com tudo combinado, a chácara fica reservada para você. Na sexta à tarde você já pode trazer as coisas, e no sábado às 8h é só chegar e aproveitar.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="local" id="local">
+    <div class="wrap loc-grid">
+      <div>
+        <span class="tag"><svg class="ico"><use href="#orn"/></svg>Localização</span>
+        <h2 class="h2">Como <em class="g">chegar</em></h2>
+        <address>R. Valter Aparecido Zanão, 770<span>Paiçandu, PR</span></address>
+        <a class="cta" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A1cara%20Ana%20Luiz%20Agapito%2C%20R.%20Valter%20Aparecido%20Zan%C3%A3o%2C%20770%2C%20Pai%C3%A7andu%20-%20PR" target="_blank" rel="noopener">Abrir no Google Maps <svg class="ico"><use href="#arrow"/></svg></a>
+      </div>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A1cara%20Ana%20Luiz%20Agapito%2C%20R.%20Valter%20Aparecido%20Zan%C3%A3o%2C%20770%2C%20Pai%C3%A7andu%20-%20PR" target="_blank" rel="noopener" aria-label="Abrir a localização da chácara no Google Maps">
+        <svg class="st" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-93 -20 L-3 340"/><path d="M-50 -20 L40 340"/><path d="M0 -20 L90 340"/><path d="M50 -20 L140 340"/><path d="M86 -20 L176 340"/><path d="M133 -20 L223 340"/><path d="M186 -20 L276 340"/><path d="M225 -20 L315 340"/><path d="M275 -20 L365 340"/><path d="M325 -20 L415 340"/><path d="M362 -20 L452 340"/><path d="M416 -20 L506 340"/><path d="M457 -20 L547 340"/><path d="M500 -20 L590 340"/><path d="M547 -20 L637 340"/><path d="M598 -20 L688 340"/><path d="M-20 -11 L620 -81"/><path d="M-20 26 L620 -44"/><path d="M-20 70 L620 0"/><path d="M-20 110 L620 40"/><path d="M-20 159 L620 89"/><path d="M-20 199 L620 129"/><path d="M-20 235 L620 165"/><path d="M-20 286 L620 216"/><path d="M-20 320 L620 250"/><path d="M-20 364 L620 294"/></svg>
+        <div class="pin"><svg viewBox="0 0 42 52"><defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4E3B6"/><stop offset="1" stop-color="#A9864F"/></linearGradient></defs><path d="M21 51S3 31 3 19a18 18 0 0 1 36 0c0 12-18 32-18 32Z" fill="url(#pg)"/><circle cx="21" cy="19" r="7" fill="#12140E"/></svg><b>Chácara Ana Luiz</b></div>
+        <div class="open"><span>Paiçandu, PR</span><span>Ver no mapa <svg class="ico" style="width:14px;height:14px"><use href="#arrow"/></svg></span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final" id="contato">
+    <div class="wrap">
+      <div class="box">
+        <img src="f-piscina.jpg" alt="" loading="lazy">
+        <span class="tag c"><svg class="ico"><use href="#wa"/></svg>Reservas</span>
+        <h2 class="h2">Vamos marcar a <em class="g">sua data?</em></h2>
+        <p>Consulte a disponibilidade e os valores direto com o Agapito.</p>
+        <a class="cta js-wa" href="#contato" target="_blank" rel="noopener"><svg class="ico"><use href="#wa"/></svg>Falar no WhatsApp</a>
+        <span class="tel js-tel"></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#topo"><svg viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" style="color:var(--gold)"><path d="M1 21c7-.6 10-7 15-7s8 6 23 7"/><path d="M11 15a7 7 0 0 1 14 0"/><path d="M31 21V7M31 7c-2-1.8-4.6-1.8-6-.8M31 7c2-1.8 4.6-1.8 6-.8M31 7c-.3-2.4-1.8-4-3.4-4.6M31 7c.3-2.4 1.8-4 3.4-4.6"/></svg><div><b>ANA LUIZ</b><small>CHÁCARA · AGAPITO</small></div></a>
+    <ul><li><a href="#agenda">Agenda</a></li><li><a href="#sobre">A chácara</a></li><li><a href="#reservar">Como reservar</a></li></ul>
+    <dl><dt>WhatsApp</dt><dd class="js-tel"></dd><dt>Endereço</dt><dd><a id="endereco" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A1cara%20Ana%20Luiz%20Agapito%2C%20R.%20Valter%20Aparecido%20Zan%C3%A3o%2C%20770%2C%20Pai%C3%A7andu%20-%20PR" target="_blank" rel="noopener" style="text-decoration:none"></a></dd><dd><button type="button" class="owner-link" id="ownerBtn">Área do proprietário</button></dd></dl>
+  </div>
+</footer>
+
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="box2">
+    <svg class="orn" aria-hidden="true"><use href="#orn"/></svg>
+    <h3 id="mTitle">Área do proprietário</h3>
+    <p>Entre com o seu e-mail e senha para mexer na agenda.</p>
+    <form id="loginForm" class="lform" novalidate>
+      <label for="lEmail">E-mail<input id="lEmail" type="email" autocomplete="username" inputmode="email" autocapitalize="off" spellcheck="false"></label>
+      <label for="lSenha">Senha<span class="pw"><input id="lSenha" type="password" autocomplete="current-password"><button type="button" id="togglePw">Mostrar</button></span></label>
+      <p class="lerr" id="loginErr" role="alert" hidden></p>
+      <button type="submit" class="btn-s gold" id="loginBtn">Entrar</button>
+      <button type="button" class="btn-s line" id="mClose">Fechar</button>
+    </form>
+  </div>
+</div>
+
+<a class="fab js-wa" href="#contato" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+/* ===== DADOS DA CHÁCARA — trocar aqui ===== */
+const WHATSAPP = "5544999512325";          // DDI + DDD + número, só dígitos
+const WHATSAPP_EXIBIDO = "(44) 99951-2325";
+const ENDERECO = "R. Valter Aparecido Zanão, 770 · Paiçandu, PR";
+/* ========================================== */
+const waUrl = m => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(m);
+document.querySelectorAll(".js-wa").forEach(a => a.href = waUrl("Olá! Vi o site da Chácara Ana Luiz e gostaria de saber as datas disponíveis e os valores."));
+document.querySelectorAll(".js-tel").forEach(el => el.textContent = WHATSAPP_EXIBIDO);
+document.getElementById("endereco").textContent = ENDERECO;
+
+/* menu fica mais sólido ao rolar */
+const nav = document.getElementById("nav");
+const onScroll = () => nav.classList.toggle("solid", scrollY > 80);
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+
+
+/* vídeo */
+const vids = [["vid","playBtn"],["vid2","playBtn2"]].map(([v, b]) => [document.getElementById(v), document.getElementById(b)]);
+vids.forEach(([vid, btn]) => {
+  btn.onclick = () => { vids.forEach(([o]) => { if (o !== vid) o.pause(); }); btn.hidden = true; vid.controls = true; vid.play().catch(() => {}); };
+  vid.addEventListener("ended", () => { vid.controls = false; btn.hidden = false; });
+});
+
+/* ===================== AGENDA ===================== */
+/* As datas ficam no Cloudflare Worker (endereço em config.js) */
+const API = /^https?:\/\//.test(window.AGENDA_API || "") ? String(window.AGENDA_API).replace(/\/+$/, "") : "";
+const TOKEN_KEY = "chacara_ana_luiz_token";
+const getToken = () => { try { return localStorage.getItem(TOKEN_KEY) || ""; } catch (_) { return ""; } };
+const setToken = t => { try { t ? localStorage.setItem(TOKEN_KEY, t) : localStorage.removeItem(TOKEN_KEY); } catch (_) {} };
+
+const pad = n => String(n).padStart(2, "0");
+const iso = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+const fromIso = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const MESES = ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+const today = new Date(); today.setHours(0,0,0,0);
+let saved = new Set();
+let booked = new Set();
+let admin = false;
+let view = new Date(today.getFullYear(), today.getMonth(), 1);
+const firstMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+const lastMonth = new Date(today.getFullYear(), today.getMonth() + 18, 1);
+
+const cal = document.getElementById("cal"), daysEl = document.getElementById("calDays");
+const titleEl = document.getElementById("calTitle"), calNote = document.getElementById("calNote");
+const saveBtn = document.getElementById("saveBtn"), adminMsg = document.getElementById("adminMsg");
+
+function weekendOf(d){ // [sábado, domingo] do fim de semana do dia (sáb ou dom)
+  const sat = new Date(d); if (d.getDay() === 0) sat.setDate(d.getDate() - 1);
+  const sun = new Date(sat); sun.setDate(sat.getDate() + 1);
+  return [sat, sun];
+}
+const fmt = d => pad(d.getDate()) + "/" + pad(d.getMonth() + 1);
+function waWeekend(sat){
+  const [s, d] = weekendOf(sat);
+  return waUrl(`Olá! Vi no site que o fim de semana de ${fmt(s)} (sábado) e ${fmt(d)} (domingo) está livre na Chácara Ana Luiz. Gostaria de saber os valores.`);
+}
+function changedCount(){
+  let n = 0; booked.forEach(x => { if (!saved.has(x)) n++; }); saved.forEach(x => { if (!booked.has(x)) n++; }); return n;
+}
+function setMsg(t, lock){ adminMsg.textContent = t; if (lock) adminMsg.dataset.lock = "1"; else delete adminMsg.dataset.lock; }
+
+function render(){
+  titleEl.textContent = MESES[view.getMonth()] + " " + view.getFullYear();
+  document.getElementById("calPrev").disabled = view <= firstMonth;
+  document.getElementById("calNext").disabled = view >= lastMonth;
+  cal.classList.toggle("admin", admin);
+  const y = view.getFullYear(), m = view.getMonth();
+  const start = new Date(y, m, 1).getDay(), total = new Date(y, m + 1, 0).getDate();
+  let html = "";
+  for (let i = 0; i < start; i++) html += '<span class="day empty"></span>';
+  for (let d = 1; d <= total; d++){
+    const dt = new Date(y, m, d), k = iso(dt), wd = dt.getDay();
+    const past = dt < today, isB = booked.has(k), wkend = wd === 0 || wd === 6;
+    const cls = ["day"];
+    if (past) cls.push("past");
+    if (isB) cls.push("booked");
+    else if (wkend && !past) cls.push("free");
+    if (+dt === +today) cls.push("today");
+    if (admin && isB !== saved.has(k)) cls.push("changed");
+    const label = `${d} de ${MESES[m]}${isB ? ", reservado" : (wkend && !past ? ", livre" : "")}`;
+    if (admin && !past) html += `<button type="button" class="${cls.join(" ")}" data-k="${k}" aria-label="${label}" aria-pressed="${isB}">${d}</button>`;
+    else if (!admin && cls.includes("free")) html += `<a class="${cls.join(" ")}" href="${waWeekend(dt)}" target="_blank" rel="noopener" aria-label="${label}, consultar no WhatsApp">${d}</a>`;
+    else html += `<span class="${cls.join(" ")}" aria-label="${label}">${d}</span>`;
+  }
+  daysEl.innerHTML = html;
+  if (admin){ const n = changedCount(); saveBtn.disabled = n === 0; if (!adminMsg.dataset.lock) adminMsg.textContent = n ? `${n} alteraç${n > 1 ? "ões" : "ão"} para salvar` : ""; }
+}
+document.getElementById("calPrev").onclick = () => { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render(); };
+document.getElementById("calNext").onclick = () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render(); };
+daysEl.addEventListener("click", e => {
+  const b = e.target.closest("button.day"); if (!b || !admin) return;
+  const dt = fromIso(b.dataset.k), wd = dt.getDay();
+  const keys = (wd === 0 || wd === 6) ? weekendOf(dt).map(iso).filter(k => fromIso(k) >= today) : [b.dataset.k];
+  const on = !booked.has(b.dataset.k);
+  keys.forEach(k => on ? booked.add(k) : booked.delete(k));
+  delete adminMsg.dataset.confirm; setMsg("", false);
+  render();
+});
+
+async function carregarAgenda(){
+  if (!API){ calNote.textContent = "Agenda ainda não conectada. Consulte as datas pelo WhatsApp."; calNote.hidden = false; return; }
+  try {
+    const r = await fetch(API + "/agenda", {cache: "no-store"});
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    saved = new Set(j.datas || []);
+    if (!admin) booked = new Set(saved);
+    calNote.hidden = true;
+    render();
+  } catch (_) {
+    calNote.textContent = "Não foi possível carregar a agenda agora. Consulte as datas pelo WhatsApp.";
+    calNote.hidden = false;
+  }
+}
+
+/* ---------- área do proprietário ---------- */
+const modal = document.getElementById("modal"), loginForm = document.getElementById("loginForm");
+const loginErr = document.getElementById("loginErr"), loginBtn = document.getElementById("loginBtn");
+function abrirLogin(aviso){
+  loginErr.textContent = aviso || ""; loginErr.hidden = !aviso;
+  modal.hidden = false;
+  setTimeout(() => document.getElementById("lEmail").focus(), 50);
+}
+const fecharLogin = () => { modal.hidden = true; };
+document.getElementById("mClose").onclick = fecharLogin;
+modal.addEventListener("click", e => { if (e.target === modal) fecharLogin(); });
+addEventListener("keydown", e => { if (e.key === "Escape") fecharLogin(); });
+document.getElementById("togglePw").onclick = () => {
+  const pw = document.getElementById("lSenha"), show = pw.type === "password";
+  pw.type = show ? "text" : "password";
+  document.getElementById("togglePw").textContent = show ? "Ocultar" : "Mostrar";
+};
+
+loginForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  const email = document.getElementById("lEmail").value.trim(), senha = document.getElementById("lSenha").value;
+  if (!email || !senha){ loginErr.textContent = "Preencha o e-mail e a senha."; loginErr.hidden = false; return; }
+  if (!API){ loginErr.textContent = "A agenda ainda não está conectada (falta o endereço em config.js)."; loginErr.hidden = false; return; }
+  loginBtn.disabled = true; loginBtn.textContent = "Entrando…"; loginErr.hidden = true;
+  try {
+    const r = await fetch(API + "/login", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({email, senha})});
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.token) throw new Error(j.erro || "Não foi possível entrar.");
+    setToken(j.token);
+    document.getElementById("lSenha").value = "";
+    fecharLogin(); enterAdmin();
+  } catch (err) {
+    loginErr.textContent = err.message === "Failed to fetch" ? "Sem conexão com a agenda. Confira a internet e tente de novo." : err.message;
+    loginErr.hidden = false;
+  } finally {
+    loginBtn.disabled = false; loginBtn.textContent = "Entrar";
+  }
+});
+
+document.getElementById("ownerBtn").onclick = () => { getToken() ? enterAdmin() : abrirLogin(); };
+function enterAdmin(){
+  admin = true; booked = new Set(saved); document.getElementById("adminBar").hidden = false;
+  setMsg("", false); render();
+  document.getElementById("agenda").scrollIntoView({behavior: "smooth"});
+}
+function exitAdmin(){
+  admin = false; booked = new Set(saved); document.getElementById("adminBar").hidden = true;
+  delete adminMsg.dataset.confirm; setMsg("", false); render();
+}
+document.getElementById("exitBtn").onclick = () => {
+  if (changedCount() && adminMsg.dataset.confirm !== "1"){ adminMsg.dataset.confirm = "1"; setMsg("Há alterações não salvas. Toque em Sair de novo para descartar.", true); return; }
+  exitAdmin();
+};
+document.getElementById("logoutBtn").onclick = () => { setToken(""); exitAdmin(); };
+
+saveBtn.onclick = async () => {
+  saveBtn.disabled = true; setMsg("Salvando…", true);
+  const datas = [...booked].filter(k => fromIso(k) >= new Date(today.getFullYear() - 1, 0, 1)).sort();
+  try {
+    const r = await fetch(API + "/agenda", {method: "PUT", headers: {"Content-Type": "application/json", "Authorization": "Bearer " + getToken()}, body: JSON.stringify({datas})});
+    const j = await r.json().catch(() => ({}));
+    if (r.status === 401){ setToken(""); setMsg("", false); saveBtn.disabled = false; abrirLogin("Por segurança, entre de novo para salvar."); return; }
+    if (!r.ok) throw new Error(j.erro || "erro");
+    saved = new Set(j.datas || datas); booked = new Set(saved);
+    setMsg("Agenda salva!", true); render();
+  } catch (_) {
+    setMsg("Não foi possível salvar agora. Confira a internet e tente de novo.", true); saveBtn.disabled = false;
+  }
+};
+
+render();
+carregarAgenda();
+</script>
+
+</body>
+</html>
