@@ -523,7 +523,7 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
       <div class="center">
         <span class="tag c"><svg class="ico"><use href="#orn"/></svg>Agenda</span>
         <h2 class="h2">Datas <em class="g">disponíveis</em></h2>
-        <p class="intro-p">As datas em dourado já estão reservadas. Toque em um fim de semana livre para consultar direto pelo WhatsApp.</p>
+        <p class="intro-p">As datas em dourado já estão reservadas. Toque em uma data livre para consultar direto pelo WhatsApp.</p>
       </div>
       <div class="ag-grid">
         <div class="cal" id="cal">
@@ -537,7 +537,7 @@ footer{border-top:1px solid rgba(239,235,225,.08);padding-block:56px calc(40px +
           <div class="legend"><span><i class="lb"></i>Reservado</span><span><i class="lf"></i>Livre</span></div>
           <p class="cal-note" id="calNote" hidden></p>
           <div class="adminbar" id="adminBar" hidden>
-            <p><b>Modo proprietário.</b> Toque em um dia para marcar como reservado ou livre. Sábado e domingo mudam juntos.</p>
+            <p><b>Modo proprietário.</b> Toque em um dia para marcar como reservado. Toque de novo para deixar livre.</p>
             <div class="acts">
               <button type="button" class="btn-s gold" id="saveBtn" disabled>Salvar agenda</button>
               <button type="button" class="btn-s line" id="exitBtn">Sair</button>
@@ -680,9 +680,9 @@ function weekendOf(d){ // [sábado, domingo] do fim de semana do dia (sáb ou do
   return [sat, sun];
 }
 const fmt = d => pad(d.getDate()) + "/" + pad(d.getMonth() + 1);
-function waWeekend(sat){
-  const [s, d] = weekendOf(sat);
-  return waUrl(`Olá! Vi no site que o fim de semana de ${fmt(s)} (sábado) e ${fmt(d)} (domingo) está livre na Chácara Ana Luiz. Gostaria de saber os valores.`);
+const DIAS = ["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+function waDia(dt){
+  return waUrl(`Olá! Vi no site que o dia ${fmt(dt)} (${DIAS[dt.getDay()]}) está livre na Chácara Ana Luiz. Gostaria de saber os valores.`);
 }
 function changedCount(){
   let n = 0; booked.forEach(x => { if (!saved.has(x)) n++; }); saved.forEach(x => { if (!booked.has(x)) n++; }); return n;
@@ -709,7 +709,7 @@ function render(){
     if (admin && isB !== saved.has(k)) cls.push("changed");
     const label = `${d} de ${MESES[m]}${isB ? ", reservado" : (wkend && !past ? ", livre" : "")}`;
     if (admin && !past) html += `<button type="button" class="${cls.join(" ")}" data-k="${k}" aria-label="${label}" aria-pressed="${isB}">${d}</button>`;
-    else if (!admin && cls.includes("free")) html += `<a class="${cls.join(" ")}" href="${waWeekend(dt)}" target="_blank" rel="noopener" aria-label="${label}, consultar no WhatsApp">${d}</a>`;
+    else if (!admin && cls.includes("free")) html += `<a class="${cls.join(" ")}" href="${waDia(dt)}" target="_blank" rel="noopener" aria-label="${label}, consultar no WhatsApp">${d}</a>`;
     else html += `<span class="${cls.join(" ")}" aria-label="${label}">${d}</span>`;
   }
   daysEl.innerHTML = html;
@@ -719,10 +719,8 @@ document.getElementById("calPrev").onclick = () => { view = new Date(view.getFul
 document.getElementById("calNext").onclick = () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render(); };
 daysEl.addEventListener("click", e => {
   const b = e.target.closest("button.day"); if (!b || !admin) return;
-  const dt = fromIso(b.dataset.k), wd = dt.getDay();
-  const keys = (wd === 0 || wd === 6) ? weekendOf(dt).map(iso).filter(k => fromIso(k) >= today) : [b.dataset.k];
-  const on = !booked.has(b.dataset.k);
-  keys.forEach(k => on ? booked.add(k) : booked.delete(k));
+  const k = b.dataset.k;
+  booked.has(k) ? booked.delete(k) : booked.add(k);
   delete adminMsg.dataset.confirm; setMsg("", false);
   render();
 });
